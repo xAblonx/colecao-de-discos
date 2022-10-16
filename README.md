@@ -20,3 +20,5 @@
 - [ ] Usar a diretiva ngIf
 - [ ] Formatar a apresentação de dados com Pipes.
 - [ ] Build e deploy da aplicação.
+
+Link Protótipo: https://www.figma.com/file/msTnLqJROEKmUaIpj54vmk/Cole%C3%A7%C3%A3o-de-Discos?node-id=0%3A1
