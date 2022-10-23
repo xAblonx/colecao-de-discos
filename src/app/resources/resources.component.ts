@@ -12,4 +12,18 @@ export class ResourcesComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  buttonStyle() {
+    return {
+      'width': '400px',
+      'height': '100px',
+      'backgroundColor': '#223A5E',
+      'borderRadius': '5px',
+      'color': '#FFF',
+      'fontSize': '25px',
+      'textTransform': 'uppercase',
+      'border': 'none',
+      'cursor': 'pointer',
+      'margin': '5px'
+    }
+  }
 }
