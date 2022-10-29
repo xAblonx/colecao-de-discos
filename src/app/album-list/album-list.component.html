@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="col s12">
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Título</th>
+          <th>Artista</th>
+          <th>Data de Lançamento</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let album of albumList;">
+          <td>{{album.id}}</td>
+          <td>{{album.titulo}}</td>
+          <td>{{album.artista}}</td>
+          <td>{{album.dataLancamento}}</td>
+          <td>
+            <a [routerLink]="['/album', album.id]" class="waves-effect waves-light btn">Editar</a>
+            <a class="waves-effect waves-light btn">Excluir</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
