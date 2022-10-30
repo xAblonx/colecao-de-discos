@@ -10,6 +10,10 @@ import { AlbumListComponent } from './album-list/album-list.component';
 import { ArtistListComponent } from './artist-list/artist-list.component';
 import { AlbumViewComponent } from './album-view/album-view.component';
 import { ArtistViewComponent } from './artist-view/artist-view.component';
+import { ArtistTableComponent } from './artist-table/artist-table.component';
+import { AlbumTableComponent } from './album-table/album-table.component';
+import { AlbumTableItemComponent } from './album-table-item/album-table-item.component';
+import { ArtistTableItemComponent } from './artist-table-item/artist-table-item.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +24,11 @@ import { ArtistViewComponent } from './artist-view/artist-view.component';
     AlbumListComponent,
     ArtistListComponent,
     AlbumViewComponent,
-    ArtistViewComponent
+    ArtistViewComponent,
+    ArtistTableComponent,
+    AlbumTableComponent,
+    AlbumTableItemComponent,
+    ArtistTableItemComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,9 @@
+<tr *ngFor="let artist of artistList;">
+  <td>{{artist.id}}</td>
+  <td>{{artist.nome}}</td>
+  <td>{{artist.origem}}</td>
+  <td>
+    <a [routerLink]="['/artist', artist.id]" class="waves-effect waves-light btn">Editar</a>
+    <a class="waves-effect waves-light btn">Excluir</a>
+  </td>
+</tr>
