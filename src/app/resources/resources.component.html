@@ -1,6 +1,8 @@
-<div class="row">
-  <div class="col s12">
-    <button type="button" [ngStyle]="buttonStyle()">álbuns</button>
-    <button type="button" [ngStyle]="buttonStyle()">artistas</button>
+<div class="content" role="main">
+  <div class="row">
+    <div class="col s12">
+      <a [routerLink]="['/album-list']" [ngStyle]="buttonStyle()">álbuns</a>
+      <a [routerLink]="['/artist-list']" [ngStyle]="buttonStyle()">artistas</a>
+    </div>
   </div>
 </div>

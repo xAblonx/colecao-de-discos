@@ -23,7 +23,10 @@ export class ResourcesComponent implements OnInit {
       'textTransform': 'uppercase',
       'border': 'none',
       'cursor': 'pointer',
-      'margin': '5px'
+      'margin': '5px',
+      'display': 'flex',
+      'justifyContent': 'center',
+      'alignItems': 'center'
     }
   }
 }
