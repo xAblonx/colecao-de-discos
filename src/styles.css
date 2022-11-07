@@ -1,2 +1,10 @@
 @import "~materialize-css/dist/css/materialize.css";
 @import "~material-icons/iconfont/material-icons.css";
+
+.mt-5 {
+  margin-top: 5px;
+}
+
+.mr-5 {
+  margin-right: 5px;
+}

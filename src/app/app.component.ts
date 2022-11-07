@@ -11,5 +11,13 @@ export class AppComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
       M.Sidenav.init(this.sideNav?.nativeElement);
+
+      document.addEventListener('DOMContentLoaded', function() {
+        // var datepicker = document.querySelectorAll('.datepicker');
+        // M.Datepicker.init(datepicker, undefined);
+
+        // var select = document.querySelectorAll('select');
+        // M.FormSelect.init(select, undefined);
+      });
   }
 }
