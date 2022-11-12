@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
+import { Album } from '../album';
 
 @Component({
   selector: 'app-album-view',
@@ -8,11 +9,23 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class AlbumViewComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private router: Router) { }
 
-  albumId?: String | null;
+  model = new Album(undefined, undefined, undefined);
 
   ngOnInit(): void {
-    this.albumId = this.route.snapshot.paramMap.get('id');
+    M.FormSelect.init(document.querySelectorAll('select'), undefined);
+  }
+
+  save() {
+    let jsonAlbumList = localStorage.getItem('album');
+    let albumList = [];
+
+    if (jsonAlbumList) albumList = JSON.parse(jsonAlbumList);
+
+    albumList.push(this.model);
+    localStorage.setItem('album', JSON.stringify(albumList));
+    this.model = new Album(undefined, undefined, undefined);
+    this.router.navigate(['/album-list']);
   }
 }

@@ -20,6 +20,10 @@ const routes: Routes = [
     component: AlbumViewComponent
   },
   {
+    path: 'new-album',
+    component: AlbumViewComponent
+  },
+  {
     path: 'artist-list',
     component: ArtistListComponent
   },

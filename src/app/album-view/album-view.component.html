@@ -1,1 +1,54 @@
-<p>Parâmetro passado: {{albumId}}</p>
+<form #albumForm="ngForm">
+  <div class="row">
+    <div class="input-field col s6">
+      <input
+      id="title"
+      type="text"
+      class="validate"
+      name="title"
+      [(ngModel)]="model.title"
+      pattern="^(\s?[A-ZÀ-Ú][a-zà-ú]*)+(\s[a-zà-ú]*)?(\s[A-ZÀ-Ú][a-zà-ú]*)+"
+      #title="ngModel"
+      required
+      >
+      <label for="title">Título</label>
+      <div [hidden]="title.valid || title.untouched" class="red-text">
+       Campo inválido
+      </div>
+      <div *ngIf="title.errors?.['required'] && title.touched" class="red-text">
+        Campo obrigatório
+      </div>
+    </div>
+    <div class="input-field col s6">
+      <select name="artist" [(ngModel)]="model.artist" #artist="ngModel" required>
+        <option [ngValue]="undefined">Selecione um Artista</option>
+        <option [ngValue]="'Iron Maiden'">Iron Maiden</option>
+        <option [ngValue]="'Opeth'">Opeth</option>
+        <option [ngValue]="'Insomnium'">Insomnium</option>
+      </select>
+      <label for="artist">Artista</label>
+    </div>
+    <div class="input-field col s6">
+      <select name="genre" [(ngModel)]="model.genre" #genre="ngModel" required>
+        <option [ngValue]="undefined">Selecione um Gênero</option>
+        <option [ngValue]="'Heavy Metal'">Heavy Metal</option>
+        <option [ngValue]="'Progressive Death Metal'">Progressive Death Metal</option>
+        <option [ngValue]="'Melodic Death Metal'">Melodic Death Metal</option>
+      </select>
+      <label for="genre">Gênero</label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col s12">
+      <button
+        [disabled]="!albumForm.form.valid"
+        class="waves-effect waves-light btn mr-5"
+        type="submit"
+        (click)="save()"
+      >
+        Salvar
+      </button>
+      <a class="waves-effect waves-light btn" [routerLink]="['/album-list']">Voltar</a>
+    </div>
+  </div>
+</form>
