@@ -1,9 +1,10 @@
 <tr *ngFor="let album of albumList;">
-  <td>{{album.title}}</td>
-  <td>{{album.artist}}</td>
-  <td>{{album.genre}}</td>
+  <td>{{ album.id }}</td>
+  <td>{{ album.title }}</td>
+  <td>{{ album.artist }}</td>
+  <td>{{ album.genre }}</td>
   <td>
     <a [routerLink]="['/album', album.id]" class="waves-effect waves-light btn mr-5">Editar</a>
-    <a class="waves-effect waves-light btn">Excluir</a>
+    <a (click)="remove(album)" class="waves-effect waves-light btn">Excluir</a>
   </td>
 </tr>

@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Album } from '../models/album';
+import { AlbumService } from '../services/album.service';
 
 @Component({
   selector: 'tbody',
@@ -7,11 +9,17 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class AlbumTableItemComponent implements OnInit {
 
-  @Input() albumList: any;
+  @Input()
+  albumList!: Album[];
 
-  constructor() { }
+  constructor(private albumService: AlbumService) { }
 
   ngOnInit(): void {
   }
 
+  async remove(album: Album) {
+    await this.albumService.delete(album)
+      .then(async () => this.albumList = await  this.albumService.getAll())
+      .catch(() => alert("Erro na exclusão"));
+  }
 }

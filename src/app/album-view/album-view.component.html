@@ -6,7 +6,7 @@
       type="text"
       class="validate"
       name="title"
-      [(ngModel)]="model.title"
+      [(ngModel)]="album.title"
       pattern="^(\s?[A-ZÀ-Ú][a-zà-ú]*)+(\s[a-zà-ú]*)?(\s[A-ZÀ-Ú][a-zà-ú]*)+"
       #title="ngModel"
       required
@@ -20,7 +20,7 @@
       </div>
     </div>
     <div class="input-field col s6">
-      <select name="artist" [(ngModel)]="model.artist" #artist="ngModel" required>
+      <select name="artist" [(ngModel)]="album.artist" #artist="ngModel" required>
         <option [ngValue]="undefined">Selecione um Artista</option>
         <option [ngValue]="'Iron Maiden'">Iron Maiden</option>
         <option [ngValue]="'Opeth'">Opeth</option>
@@ -29,7 +29,7 @@
       <label for="artist">Artista</label>
     </div>
     <div class="input-field col s6">
-      <select name="genre" [(ngModel)]="model.genre" #genre="ngModel" required>
+      <select name="genre" [(ngModel)]="album.genre" #genre="ngModel" required>
         <option [ngValue]="undefined">Selecione um Gênero</option>
         <option [ngValue]="'Heavy Metal'">Heavy Metal</option>
         <option [ngValue]="'Progressive Death Metal'">Progressive Death Metal</option>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Album } from '../album';
+import { Album } from '../models/album';
+import { AlbumService } from '../services/album.service';
 
 @Component({
   selector: 'app-album-view',
@@ -9,23 +10,20 @@ import { Album } from '../album';
 })
 export class AlbumViewComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router,
+    private albumService: AlbumService,
+    ) { }
 
-  model = new Album(undefined, undefined, undefined);
+  album!: Album;
 
   ngOnInit(): void {
     M.FormSelect.init(document.querySelectorAll('select'), undefined);
+    this.album = new Album(undefined, undefined, undefined);
   }
 
   save() {
-    let jsonAlbumList = localStorage.getItem('album');
-    let albumList = [];
-
-    if (jsonAlbumList) albumList = JSON.parse(jsonAlbumList);
-
-    albumList.push(this.model);
-    localStorage.setItem('album', JSON.stringify(albumList));
-    this.model = new Album(undefined, undefined, undefined);
+    this.albumService.save(this.album);
     this.router.navigate(['/album-list']);
   }
 }

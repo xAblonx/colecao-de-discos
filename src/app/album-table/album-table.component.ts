@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Album } from '../models/album';
+import { AlbumService } from '../services/album.service';
 
 @Component({
   selector: 'app-album-table',
@@ -7,12 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AlbumTableComponent implements OnInit {
 
-  constructor() { }
-  albumList: any
+  constructor(private albumService: AlbumService) { }
+  albumList!: Album[];
 
-  ngOnInit(): void {
-    let jsonAlbumList = localStorage.getItem('album');
-
-    if (jsonAlbumList) this.albumList = JSON.parse(jsonAlbumList);
+  async ngOnInit(): Promise<void> {
+    this.albumList = await this.albumService.getAll();
   }
 }
