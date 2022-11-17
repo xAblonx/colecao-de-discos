@@ -15,6 +15,7 @@ import { ArtistTableComponent } from './artist-table/artist-table.component';
 import { AlbumTableComponent } from './album-table/album-table.component';
 import { AlbumTableItemComponent } from './album-table-item/album-table-item.component';
 import { ArtistTableItemComponent } from './artist-table-item/artist-table-item.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { ArtistTableItemComponent } from './artist-table-item/artist-table-item.
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

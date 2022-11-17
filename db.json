@@ -1,0 +1,47 @@
+{
+  "albums": [
+    {
+      "title": "Blackwater Park",
+      "genre": "Progressive Death Metal",
+      "artist": "Opeth",
+      "id": 1
+    },
+    {
+      "title": "Argent Moon",
+      "genre": "Melodic Death Metal",
+      "artist": "Opeth",
+      "id": 2
+    },
+    {
+      "title": "One For Sorrow",
+      "genre": "Melodic Death Metal",
+      "artist": "Insomnium",
+      "id": 3
+    },
+    {
+      "title": "Across The Dark",
+      "genre": "Melodic Death Metal",
+      "artist": "Insomnium",
+      "id": 4
+    },
+    {
+      "title": "One For Sorrow",
+      "genre": "Melodic Death Metal",
+      "artist": "Insomnium",
+      "id": 5
+    },
+    {
+      "title": "Winters Gate",
+      "genre": "Melodic Death Metal",
+      "artist": "Opeth",
+      "id": 6
+    },
+    {
+      "title": "Iron Maiden",
+      "genre": "Heavy Metal",
+      "artist": "Iron Maiden",
+      "id": 7
+    }
+  ],
+  "artists": []
+}

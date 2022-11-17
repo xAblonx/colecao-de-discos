@@ -5,6 +5,7 @@ app-footer {
 #content {
   height: calc(100vh - 80px);
   margin-bottom: 0;
+  overflow: auto;
 }
 
 #content > div {
