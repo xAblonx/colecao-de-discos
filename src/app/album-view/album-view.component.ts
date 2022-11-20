@@ -23,7 +23,9 @@ export class AlbumViewComponent implements OnInit {
   }
 
   save() {
-    this.albumService.save(this.album);
-    this.router.navigate(['/album-list']);
+    this.albumService.save(this.album).subscribe({
+      next: () => this.router.navigate(['/album-list']),
+      error: (error) => alert(error.message)
+    });
   }
 }

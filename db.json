@@ -4,43 +4,57 @@
       "title": "Blackwater Park",
       "genre": "Progressive Death Metal",
       "artist": "Opeth",
-      "id": 1
+      "id": 1,
+      "releaseDate": "2001/03/12"
     },
     {
       "title": "Argent Moon",
       "genre": "Melodic Death Metal",
-      "artist": "Opeth",
-      "id": 2
+      "artist": "Insomnium",
+      "id": 2,
+      "releaseDate": "2021/09/17"
     },
     {
       "title": "One For Sorrow",
       "genre": "Melodic Death Metal",
       "artist": "Insomnium",
-      "id": 3
+      "id": 3,
+      "releaseDate": "2011/10/25"
     },
     {
       "title": "Across The Dark",
       "genre": "Melodic Death Metal",
       "artist": "Insomnium",
-      "id": 4
+      "id": 4,
+      "releaseDate": "2009/09/07"
     },
     {
-      "title": "One For Sorrow",
+      "title": "Since The Day It All Came Down",
       "genre": "Melodic Death Metal",
       "artist": "Insomnium",
-      "id": 5
+      "id": 5,
+      "releaseDate": "2004/04/05"
     },
     {
-      "title": "Winters Gate",
-      "genre": "Melodic Death Metal",
+      "title": "Still Life",
+      "genre": "Progressive Death Metal",
       "artist": "Opeth",
-      "id": 6
+      "id": 6,
+      "releaseDate": "1999/10/18"
     },
     {
-      "title": "Iron Maiden",
+      "title": "The Number Of The Beast",
       "genre": "Heavy Metal",
       "artist": "Iron Maiden",
-      "id": 7
+      "id": 8,
+      "releaseDate": "1982/03/22"
+    },
+    {
+      "title": "Somewhere In Time",
+      "genre": "Heavy Metal",
+      "artist": "Iron Maiden",
+      "id": 9,
+      "releaseDate": "1986/09/29"
     }
   ],
   "artists": []
