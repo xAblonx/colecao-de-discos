@@ -17,9 +17,13 @@ export class AlbumTableItemComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  async remove(album: Album) {
-    await this.albumService.delete(album)
-      .then(async () => this.albumList = await  this.albumService.getAll())
-      .catch(() => alert("Erro na exclusão"));
+  remove(album: Album) {
+    this.albumService.delete(album).subscribe({
+      next: () => this.albumService.getAll().subscribe({
+        next: (albums: Album[]) => this.albumList = albums,
+        error: (error) => alert(error.message)
+      }),
+      error: (error) => alert(error.message)
+    });
   }
 }

@@ -12,7 +12,10 @@ export class AlbumTableComponent implements OnInit {
   constructor(private albumService: AlbumService) { }
   albumList!: Album[];
 
-  async ngOnInit(): Promise<void> {
-    this.albumList = await this.albumService.getAll();
+  ngOnInit(): void {
+    this.albumService.getAll().subscribe({
+      next: (albums: Album[]) => this.albumList = albums,
+      error: (error) => alert(error.message)
+    });
   }
 }
