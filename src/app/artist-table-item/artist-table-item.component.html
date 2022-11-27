@@ -1,9 +1,28 @@
-<tr *ngFor="let artist of artistList;">
-  <td>{{artist.id}}</td>
-  <td>{{artist.nome}}</td>
-  <td>{{artist.origem}}</td>
-  <td>
-    <a [routerLink]="['/artist', artist.id]" class="waves-effect waves-light btn">Editar</a>
-    <a class="waves-effect waves-light btn">Excluir</a>
-  </td>
-</tr>
+<div class="table-responsive">
+  <table class="table table-sm">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Origem</th>
+        <th scope="col">Fundação</th>
+        <th scope="col">Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let artist of artistList;">
+        <th scope="row">{{ artist.id }}</th>
+        <td>{{ artist.name }}</td>
+        <td>{{ artist.origin }}</td>
+        <td>{{ artist.foundationYear }}</td>
+        <td>
+          <a [routerLink]="['/artist', artist.id]" class="btn btn-secondary me-2">Editar</a>
+          <a (click)="remove(artist)" class="btn btn-secondary">Excluir</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div *ngIf="!artistList?.length">
+    <p class="text-center">Nenhuma informação cadastrada.</p>
+  </div>
+</div>

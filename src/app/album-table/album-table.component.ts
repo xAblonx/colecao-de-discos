@@ -10,6 +10,7 @@ import { AlbumService } from '../services/album.service';
 export class AlbumTableComponent implements OnInit {
 
   constructor(private albumService: AlbumService) { }
+
   albumList!: Album[];
 
   ngOnInit(): void {

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Artist } from '../models/artist';
+import { ArtistService } from '../services/artist.service';
 
 @Component({
   selector: 'app-artist-table',
@@ -7,27 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ArtistTableComponent implements OnInit {
 
-  constructor() { }
+  constructor(private artistService: ArtistService) { }
 
-  artistList = [
-    {
-      id: 1,
-      nome: "Opeth",
-      origem: "Suécia"
-    },
-    {
-      id: 2,
-      nome: "Insomnium",
-      origem: "Finlândia"
-    },
-    {
-      id: 3,
-      nome: "Iron Maiden",
-      origem: "Reino Unido"
-    }
-  ]
+  artistList!: Artist[];
 
   ngOnInit(): void {
+    this.artistService.getAll().subscribe({
+      next: (artists: Artist[]) => this.artistList = artists,
+      error: (error) => alert(error.message)
+    });
   }
-
 }

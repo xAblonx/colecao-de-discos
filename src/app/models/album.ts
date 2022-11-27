@@ -1,10 +1,13 @@
+import { Artist } from "./artist";
+
 export class Album {
 
   constructor(
-    public id?: number,
-    public title?: string,
-    public genre?: string,
-    public artist?: string,
-    public releaseDate?: string
+    public id?: number | null,
+    public title?: string | null,
+    public genre?: string | null,
+    public artistId?: number | null,
+    public artist?: Artist | null,
+    public releaseDate?: string | null
   ) { }
 }

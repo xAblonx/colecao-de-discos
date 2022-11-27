@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Artist } from '../models/artist';
+import { ArtistService } from '../services/artist.service';
 
 @Component({
   selector: 'app-artist-view',
@@ -8,12 +10,40 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ArtistViewComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(
+    private router: Router,
+    private artistService: ArtistService,
+    private route: ActivatedRoute
+  ) { }
 
-  artistId?: String | null;
+  artist!: Artist;
+  artistId?: string | null;
 
   ngOnInit(): void {
+    this.artist = new Artist(null, null, null);
     this.artistId = this.route.snapshot.paramMap.get('id');
+
+    if(this.artistId) {
+      this.artistService.getById(parseInt(this.artistId)).subscribe({
+        next: (artist: Artist) => {
+          this.artist = artist;
+        },
+        error: (error) => alert(error.message)
+      })
+    }
   }
 
+  saveOrUpdate() {
+    if(this.artistId) {
+      this.artistService.update(this.artist).subscribe({
+        next: () => this.router.navigate(['/artist-list']),
+        error: (error) => alert(error.message)
+      });
+    } else {
+      this.artistService.save(this.artist).subscribe({
+        next: () => this.router.navigate(['/artist-list']),
+        error: (error) => alert(error.message)
+      });
+    }
+  }
 }

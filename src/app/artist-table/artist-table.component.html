@@ -1,11 +1,5 @@
-<table>
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Nome</th>
-      <th>Origem</th>
-      <th>Ações</th>
-    </tr>
-  </thead>
-  <app-artist-table-item [artistList]="artistList"></app-artist-table-item>
-</table>
+<div class="btn-group my-2">
+  <a [routerLink]="['/new-artist']" class="btn btn-primary me-2">Novo</a>
+  <a class="btn btn-primary" [routerLink]="['/']">Voltar</a>
+</div>
+<app-artist-table-item [artistList]="artistList"></app-artist-table-item>

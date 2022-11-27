@@ -1,1 +1,62 @@
-<p>Parâmetro passado: {{artistId}}</p>
+<form #artistForm="ngForm">
+  <div class="row">
+    <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 col-xxl-4">
+      <label for="name" class="form-label">Nome</label>
+      <input
+      id="name"
+      type="text"
+      class="form-control"
+      name="name"
+      [(ngModel)]="artist.name"
+      #name="ngModel"
+      required
+      >
+      <div [hidden]="name.valid || name.untouched" class="red-text">
+       Campo inválido
+      </div>
+      <div *ngIf="name.errors?.['required'] && name.touched" class="red-text">
+        Campo obrigatório
+      </div>
+    </div>
+    <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 col-xxl-4">
+      <label for="origin" class="form-label">Origem</label>
+      <input
+      id="origin"
+      type="text"
+      class="form-control"
+      name="origin"
+      [(ngModel)]="artist.origin"
+      #origin="ngModel"
+      required
+      >
+      <div [hidden]="origin.valid || origin.untouched" class="red-text">
+       Campo inválido
+      </div>
+      <div *ngIf="origin.errors?.['required'] && origin.touched" class="red-text">
+        Campo obrigatório
+      </div>
+    </div>
+    <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 col-xxl-4">
+      <label for="foundation_year" class="form-label">Ano de Fundação</label>
+      <input
+        class="form-control"
+        type="number"
+        min="1900"
+        name="foundation_year"
+        [(ngModel)]="artist.foundationYear"
+        #foundationYear="ngModel"
+        required>
+    </div>
+  </div>
+  <div class="btn-group mt-3">
+    <button
+      [disabled]="!artistForm.form.valid"
+      class="btn btn-success me-2"
+      type="submit"
+      (click)="saveOrUpdate()"
+    >
+      Salvar
+    </button>
+    <a class="btn btn-danger" [routerLink]="['/artist-list']">Voltar</a>
+  </div>
+</form>
