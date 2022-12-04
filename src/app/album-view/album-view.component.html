@@ -1,0 +1,58 @@
+<form #albumForm="ngForm">
+  <div class="row">
+    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-3 col-xxl-3">
+      <label for="title" class="form-label">Título</label>
+      <input
+      id="title"
+      type="text"
+      class="form-control"
+      name="title"
+      [(ngModel)]="album.title"
+      pattern="^(\s?[A-ZÀ-Ú][a-zà-ú]*)+(\s[a-zà-ú]*)?"
+      #title="ngModel"
+      required
+      >
+      <div [hidden]="title.valid || title.untouched" class="red-text">
+       Campo inválido
+      </div>
+      <div *ngIf="title.errors?.['required'] && title.touched" class="red-text">
+        Campo obrigatório
+      </div>
+    </div>
+    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-3 col-xxl-3">
+      <label for="artist" class="form-label">Artista</label>
+      <select name="artist" class="form-select" [(ngModel)]="album.artistId" #artist="ngModel" required>
+        <option [ngValue]="null">Selecione um Artista</option>
+        <option *ngFor="let artist of artistList" [ngValue]="artist.id">{{ artist.name }}</option>
+      </select>
+    </div>
+    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-3 col-xxl-3">
+      <label for="genre" class="form-label">Gênero</label>
+      <select name="genre" class="form-select" [(ngModel)]="album.genre" #genre="ngModel" required>
+        <option [ngValue]="null">Selecione um Gênero</option>
+        <option *ngFor="let genre of genres" [ngValue]="genre">{{ genre }}</option>
+      </select>
+    </div>
+    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-3 col-xxl-3">
+      <label for="release_date" class="form-label">Data de Lançamento</label>
+      <input
+        class="form-control"
+        type="date"
+        name="release_date"
+        [(ngModel)]="album.releaseDate"
+        #releaseDate="ngModel"
+        required>
+    </div>
+  </div>
+  <div class="btn-group mt-3">
+    <button
+      [disabled]="!albumForm.form.valid"
+      class="btn btn-success me-2"
+      type="submit"
+      (click)="saveOrUpdate()"
+    >
+      Salvar
+    </button>
+    <a class="btn btn-danger" [routerLink]="['/album-list']">Voltar</a>
+  </div>
+</form>

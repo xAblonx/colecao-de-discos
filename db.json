@@ -1,0 +1,80 @@
+{
+  "albums": [
+    {
+      "title": "Blackwater Park",
+      "genre": "Progressive Metal",
+      "id": 1,
+      "releaseDate": "2001-03-12",
+      "artistId": 2
+    },
+    {
+      "title": "Argent Moon",
+      "genre": "Melodic Death Metal",
+      "id": 2,
+      "releaseDate": "2021-09-17",
+      "artistId": 3
+    },
+    {
+      "title": "One For Sorrow",
+      "genre": "Melodic Death Metal",
+      "id": 3,
+      "releaseDate": "2011-10-25",
+      "artistId": 3
+    },
+    {
+      "title": "Across The Dark",
+      "genre": "Melodic Death Metal",
+      "id": 4,
+      "releaseDate": "2009-09-07",
+      "artistId": 3
+    },
+    {
+      "title": "Since The Day It All Came Down",
+      "genre": "Melodic Death Metal",
+      "id": 5,
+      "releaseDate": "2004-04-05",
+      "artistId": 3
+    },
+    {
+      "title": "Still Life",
+      "genre": "Progressive Metal",
+      "id": 6,
+      "releaseDate": "1999-10-18",
+      "artistId": 2
+    },
+    {
+      "title": "The Number Of The Beast",
+      "genre": "Heavy Metal",
+      "id": 8,
+      "releaseDate": "1982-03-22",
+      "artistId": 1
+    },
+    {
+      "title": "Somewhere In Time",
+      "genre": "Heavy Metal",
+      "id": 9,
+      "releaseDate": "1986-12-29",
+      "artistId": 1
+    }
+  ],
+  "artists": [
+    {
+      "id": 1,
+      "name": "Iron Maiden",
+      "origin": "Reino Unido",
+      "foundationYear": 1975
+    },
+    {
+      "id": 2,
+      "name": "Opeth",
+      "origin": "Suécia",
+      "foundationYear": 1990
+    },
+    {
+      "id": 3,
+      "name": "Insomnium",
+      "origin": "Finlândia",
+      "foundationYear": 1997
+    }
+  ]
+}

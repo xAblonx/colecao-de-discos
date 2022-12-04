@@ -1,0 +1,30 @@
+<div class="table-responsive">
+  <table class="table table-sm">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Título</th>
+        <th scope="col">Artista</th>
+        <th scope="col">Gênero</th>
+        <th scope="col">Data de Lançamento</th>
+        <th scope="col">Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let album of albumList;">
+        <th scope="row">{{ album.id }}</th>
+        <td>{{ album.title }}</td>
+        <td>{{ album.artist?.name }}</td>
+        <td>{{ album.genre }}</td>
+        <td>{{ album.releaseDate | date: 'fullDate':'':'pt-BR' | titlecase }}</td>
+        <td>
+          <a [routerLink]="['/album', album.id]" class="btn btn-secondary me-2">Editar</a>
+          <a (click)="remove(album)" class="btn btn-secondary">Excluir</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div *ngIf="!albumList?.length">
+    <p class="text-center">Nenhuma informação cadastrada.</p>
+  </div>
+</div>
