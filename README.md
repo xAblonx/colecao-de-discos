@@ -12,13 +12,11 @@
 - [X] Mapear componentes à rotas no módulo de rotas.
 - [X] Criar navegação entre páginas por meio de rotas.
 - [X] Passar dados entre componentes que representam diferentes telas via parâmetros de rotas.
-- [ ] Validar campos do formulário com REGEX e apresentar os erros.
-- [ ] Desabilitar o botão de submit enquanto o formulário está inválido.
-- [ ] Fazer requisições a API com tratamento da resposta com Promises ou Observables.
-- [ ] Cadastrar uma entidade usando uma API (JSON Server).
-- [ ] Apresentar uma lista de dados com a diretiva estrutural ngFor.
-- [ ] Usar a diretiva ngIf
-- [ ] Formatar a apresentação de dados com Pipes.
-- [ ] Build e deploy da aplicação.
-
-// json-server --watch db.jon
+- [X] Validar campos do formulário com REGEX e apresentar os erros.
+- [X] Desabilitar o botão de submit enquanto o formulário está inválido.
+- [X] Fazer requisições a API com tratamento da resposta com Promises ou Observables.
+- [X] Cadastrar uma entidade usando uma API (JSON Server).
+- [X] Apresentar uma lista de dados com a diretiva estrutural ngFor.
+- [X] Usar a diretiva ngIf
+- [X] Formatar a apresentação de dados com Pipes.
+- [X] Build e deploy da aplicação.

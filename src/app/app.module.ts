@@ -18,6 +18,7 @@ import { ArtistTableItemComponent } from './artist-table-item/artist-table-item.
 import { HttpClientModule } from '@angular/common/http';
 import localePt from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
+import { NavbarComponent } from './navbar/navbar.component';
 
 registerLocaleData(localePt, 'pt');
 
@@ -34,7 +35,8 @@ registerLocaleData(localePt, 'pt');
     ArtistTableComponent,
     AlbumTableComponent,
     AlbumTableItemComponent,
-    ArtistTableItemComponent
+    ArtistTableItemComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

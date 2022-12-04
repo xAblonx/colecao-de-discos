@@ -1,17 +1,17 @@
 <form #albumForm="ngForm">
   <div class="row">
-    <div class="input-field col s6">
+    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-3 col-xxl-3">
+      <label for="title" class="form-label">Título</label>
       <input
       id="title"
       type="text"
-      class="validate"
+      class="form-control"
       name="title"
       [(ngModel)]="album.title"
-      pattern="^(\s?[A-ZÀ-Ú][a-zà-ú]*)+(\s[a-zà-ú]*)?(\s[A-ZÀ-Ú][a-zà-ú]*)+"
+      pattern="^(\s?[A-ZÀ-Ú][a-zà-ú]*)+(\s[a-zà-ú]*)?"
       #title="ngModel"
       required
       >
-      <label for="title">Título</label>
       <div [hidden]="title.valid || title.untouched" class="red-text">
        Campo inválido
       </div>
@@ -19,40 +19,40 @@
         Campo obrigatório
       </div>
     </div>
-    <div class="input-field col s6">
-      <select name="artist" [(ngModel)]="album.artist" #artist="ngModel" required>
-        <option [ngValue]="undefined">Selecione um Artista</option>
-        <option [ngValue]="'Iron Maiden'">Iron Maiden</option>
-        <option [ngValue]="'Opeth'">Opeth</option>
-        <option [ngValue]="'Insomnium'">Insomnium</option>
+    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-3 col-xxl-3">
+      <label for="artist" class="form-label">Artista</label>
+      <select name="artist" class="form-select" [(ngModel)]="album.artistId" #artist="ngModel" required>
+        <option [ngValue]="null">Selecione um Artista</option>
+        <option *ngFor="let artist of artistList" [ngValue]="artist.id">{{ artist.name }}</option>
       </select>
-      <label for="artist">Artista</label>
     </div>
-    <div class="input-field col s6">
-      <select name="genre" [(ngModel)]="album.genre" #genre="ngModel" required>
-        <option [ngValue]="undefined">Selecione um Gênero</option>
-        <option [ngValue]="'Heavy Metal'">Heavy Metal</option>
-        <option [ngValue]="'Progressive Death Metal'">Progressive Death Metal</option>
-        <option [ngValue]="'Melodic Death Metal'">Melodic Death Metal</option>
+    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-3 col-xxl-3">
+      <label for="genre" class="form-label">Gênero</label>
+      <select name="genre" class="form-select" [(ngModel)]="album.genre" #genre="ngModel" required>
+        <option [ngValue]="null">Selecione um Gênero</option>
+        <option *ngFor="let genre of genres" [ngValue]="genre">{{ genre }}</option>
       </select>
-      <label for="genre">Gênero</label>
     </div>
-    <div class="input-field col s6">
-      <input type="date" name="release_date" [(ngModel)]="album.releaseDate">
-      <label for="genre">Data de Lançamento</label>
+    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-3 col-xxl-3">
+      <label for="release_date" class="form-label">Data de Lançamento</label>
+      <input
+        class="form-control"
+        type="date"
+        name="release_date"
+        [(ngModel)]="album.releaseDate"
+        #releaseDate="ngModel"
+        required>
     </div>
   </div>
-  <div class="row">
-    <div class="col s12">
-      <button
-        [disabled]="!albumForm.form.valid"
-        class="waves-effect waves-light btn mr-5"
-        type="submit"
-        (click)="save()"
-      >
-        Salvar
-      </button>
-      <a class="waves-effect waves-light btn" [routerLink]="['/album-list']">Voltar</a>
-    </div>
+  <div class="btn-group mt-3">
+    <button
+      [disabled]="!albumForm.form.valid"
+      class="btn btn-success me-2"
+      type="submit"
+      (click)="saveOrUpdate()"
+    >
+      Salvar
+    </button>
+    <a class="btn btn-danger" [routerLink]="['/album-list']">Voltar</a>
   </div>
 </form>

@@ -1,17 +1,5 @@
-<div class="button-container">
-  <a [routerLink]="['/new-album']" class="waves-effect waves-light btn mr-5">Novo</a>
-  <a class="waves-effect waves-light btn" [routerLink]="['/']">Voltar</a>
+<div class="btn-group my-2">
+  <a [routerLink]="['/new-album']" class="btn btn-primary me-2">Novo</a>
+  <a class="btn btn-primary" [routerLink]="['/']">Voltar</a>
 </div>
-<table>
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Título</th>
-      <th>Artista</th>
-      <th>Gênero</th>
-      <th>Data de Lançamento</th>
-      <th>Ações</th>
-    </tr>
-  </thead>
-  <tbody [albumList]="albumList"></tbody>
-</table>
+<app-album-table-item [albumList]="albumList"></app-album-table-item>

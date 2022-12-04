@@ -31,6 +31,10 @@ const routes: Routes = [
     path: 'artist/:id',
     component: ArtistViewComponent
   },
+  {
+    path: 'new-artist',
+    component: ArtistViewComponent
+  }
 ];
 
 @NgModule({
