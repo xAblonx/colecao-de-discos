@@ -20,3 +20,6 @@
 - [X] Usar a diretiva ngIf
 - [X] Formatar a apresentação de dados com Pipes.
 - [X] Build e deploy da aplicação.
+
+Link Protótipo: https://www.figma.com/file/msTnLqJROEKmUaIpj54vmk/Cole%C3%A7%C3%A3o-de-Discos?node-id=0%3A1
+Link de Produção: https://xablonx.github.io/colecao-de-discos/
